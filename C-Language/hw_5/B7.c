@@ -19,17 +19,23 @@ YES
 
 #include <stdio.h>
 
-int main() {
-    int a;
-    scanf("%d", &a);
-    int prev = 0;
+int checkNum(int num, int init) {
     int count = 0;
-
-    while (a > 0) {
-        if (prev == a % 10) {
+    while (init > 0) {
+        if (init % 10 == num) {
             count++;
         }
-        prev = a % 10;
+        init /= 10;
+    }
+    return count;
+}
+
+int main() {
+    int a, count = 0;
+    scanf("%d", &a);
+    while (a > 0) {
+        int num = a % 10;
+        count += checkNum(num, a) > 1 ? 1 : 0;
         a /= 10;
     }
     printf(count > 0 ? "YES" : "NO");

@@ -21,21 +21,12 @@ Output
 
 
 int main() {
-    int a,b;
-    scanf("%d %d", &a, &b);
-    int max = a > b ? a : b;
-    int min = a <= b ? a : b;
-
-    while (1) {
-        int nod = max % min;
-        if (nod == 0) {
-            printf("%d", nod);
-            break;
-        }
-        if (nod < min) {
-            max = nod;
-        } else {
-            min = nod;
-        }
+    int x,y;
+    scanf("%d %d", &x, &y);
+    while (y != 0) {
+        int r = x % y;
+        x = y;
+        y = r;
     }
+    printf("%d", x);
 }

@@ -27,21 +27,17 @@ Output
 
 
 int main() {
-    int a,b;
-    scanf("%d %d", &a, &b);
-    int max = a > b ? a : b;
-    int min = a <= b ? a : b;
-
-    while (1) {
-        int nod = max % min;
-        if (nod == 0) {
-            printf("%d", nod);
-            break;
+    int aa;
+    scanf("%d", &aa);
+    for (int i = 10; i <= aa; i++) {
+        int a = i;
+        int sum = 0;
+        int proizv = 1;
+        while (a > 0) {
+            sum+=a%10;
+            proizv *= a % 10;
+            a /= 10;
         }
-        if (nod < min) {
-            max = nod;
-        } else {
-            min = nod;
-        }
+        if (sum == proizv) printf("%d ", i);
     }
 }
