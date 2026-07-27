@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+*.md
+!C-Language/hw_2/readme.md
+C-Language/hw_7/akerman.jpg
+C-Language/hw_9/chess_board.jpg
